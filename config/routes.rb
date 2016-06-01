@@ -31,6 +31,16 @@ Rails.application.routes.draw do
         end
       end
 
+      resources :transactions, only: [:index, :show], module: 'transactions' do
+
+        collection do
+          get '/find',          to: 'transactions#find'
+          get '/find_all',      to: 'transactions#find_all'
+          get '/random',        to: 'transactions#random'
+        end
+
+      end
+
     end
   end
 end
