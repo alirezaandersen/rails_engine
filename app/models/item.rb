@@ -1,3 +1,4 @@
 class Item  < ActiveRecord::Base
-
-end 
+  belongs_to :merchants
+  has_many :invoices
+end
