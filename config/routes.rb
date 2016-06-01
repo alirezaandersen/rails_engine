@@ -6,23 +6,28 @@ Rails.application.routes.draw do
       resources :merchants, only: [:index, :show], module: 'merchants' do
 
         collection do
-          get '/find',         to: 'merchants#find'
-          get '/find_all',     to: 'merchants#find_all'
-          get '/random',       to: 'merchants#random'
+          get '/find',          to: 'merchants#find'
+          get '/find_all',      to: 'merchants#find_all'
+          get '/random',        to: 'merchants#random'
         end
 
         member do
-          get '/items',                           to: 'merchant_items#index'
-          get '/invoices',                        to: 'merchant_invoices#index'
+          get '/items',         to: 'merchant_items#index'
+          get '/invoices',      to: 'merchant_invoices#index'
         end
       end
 
       resources :customers, only: [:index, :show], module: 'customers' do
 
         collection do
-          get '/find',         to: 'customers#find'
-          get '/find_all',     to: 'customers#find_all'
-          get '/random',       to: 'customers#random'
+          get '/find',          to: 'customers#find'
+          get '/find_all',      to: 'customers#find_all'
+          get '/random',        to: 'customers#random'
+        end
+
+        member do
+          get '/transactions',  to: 'customer_transactions#index'
+          get '/invoices', to: 'customer_invoices#index'
         end
       end
 
