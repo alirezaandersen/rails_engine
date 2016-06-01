@@ -4,7 +4,6 @@ module Api
       respond_to :json
 
       def index
-        # binding.pry
         respond_with Invoice.all
       end
 
