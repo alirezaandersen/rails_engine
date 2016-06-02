@@ -13,16 +13,20 @@ module Api
         end
 
         def find
-          respond_with InvoiceItem.find_by(invoice_item_params)
+          respond_with InvoiceItem.find_by(invoice_items_params)
         end
 
         def find_all
-          repsond_with InvoiceItem.where(invoice_item_parms)
+          respond_with InvoiceItem.where(invoice_items_params)
+        end
+
+        def random
+          respond_with InvoiceItem.all.sample
         end
 
         private
 
-        def inovice_items_params
+        def invoice_items_params
           params.permit(:item_id, :invoice_id, :quantity, :unit_price, :created_at, :updated_at)
         end
       end

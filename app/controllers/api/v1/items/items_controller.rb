@@ -21,6 +21,10 @@ module Api
           respond_with Item.where(item_params)
         end
 
+        def random
+          respond_with Item.all.sample
+        end
+
         private
 
         def item_params

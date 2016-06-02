@@ -27,13 +27,12 @@ FactoryGirl.define do
     association :item
     association :invoice
     quantity 2
-    unit_price 5004
+    unit_price 5005
   end
 
   factory :transaction do
     association :invoice
     credit_card_number "1234567890654321"
-    credit_card_expiration_date "8/6/2020"
     result "pending"
   end
 end

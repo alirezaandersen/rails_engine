@@ -3,10 +3,10 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::Merchants::MerchantsController do
   describe "GET index", type: :controller do
-    it "returns all customers" do
-      customer1 = FactoryGirl.create(:merchant)
-      customer2 = FactoryGirl.create(:merchant)
-      customer2.update(name:"Petco")
+    it "returns all merchants" do
+      merchant1 = FactoryGirl.create(:merchant)
+      merchant2 = FactoryGirl.create(:merchant)
+      merchant2.update(name:"Petco")
       get :index, format: :json
 
       items = JSON.parse(response.body)
