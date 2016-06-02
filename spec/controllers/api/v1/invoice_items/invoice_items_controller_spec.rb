@@ -45,7 +45,7 @@ RSpec.describe Api::V1::InvoiceItems::InvoiceItemsController do
   describe "Get Find_all", type: :controller do
     it "can find invoice items based on any invoice items query" do
     invoice_items = FactoryGirl.create(:invoice_item)
-    # binding.pry
+
     get :find_all, id: invoice_items.id, format: :json
 
       item = JSON.parse(response.body)

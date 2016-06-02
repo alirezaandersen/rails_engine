@@ -14,6 +14,15 @@ Rails.application.routes.draw do
         member do
           get '/items',         to: 'merchant_items#index'
           get '/invoices',      to: 'merchant_invoices#index'
+          #all merchants
+          get '/most_revenue',  to: 'most_revenue#index'
+          get '/most_items',    to: 'most_items#index'
+          get '/revenue',       to: 'all_revenue#index'
+
+          #single merchants
+          get '/revenue',       to: 'single_revenue#index'
+          get '/revenue',       to: 'date_revenue#index'
+          get '/favorite_customer', to: 'favorite_customer#index'
         end
       end
 

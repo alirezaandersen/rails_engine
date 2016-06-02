@@ -45,7 +45,7 @@ RSpec.describe Api::V1::Items::ItemsController do
   describe "Get Find_all", type: :controller do
     it "can find items based on any items query" do
     items = FactoryGirl.create(:item)
-    # binding.pry
+
     get :find_all, id: items.id, format: :json
 
       item = JSON.parse(response.body)

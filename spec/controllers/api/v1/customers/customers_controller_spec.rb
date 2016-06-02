@@ -45,7 +45,7 @@ RSpec.describe Api::V1::Customers::CustomersController do
   describe "Get Find_all", type: :controller do
     it "can find customer based on any customer query" do
     customer = FactoryGirl.create(:customer)
-    # binding.pry
+
     get :find_all, id: customer.id, format: :json
 
       item = JSON.parse(response.body)

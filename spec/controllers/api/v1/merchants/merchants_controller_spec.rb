@@ -45,7 +45,7 @@ RSpec.describe Api::V1::Merchants::MerchantsController do
   describe "Get Find_all", type: :controller do
     it "can find merchant based on any merchant query" do
     merchant = FactoryGirl.create(:merchant)
-    # binding.pry
+
     get :find_all, id: merchant.id, format: :json
 
       item = JSON.parse(response.body)
