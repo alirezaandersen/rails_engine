@@ -10,7 +10,7 @@ RSpec.describe Api::V1::Customers::CustomerTransactionsController do
       get :index, id: customer.id, format: :json
 
       items = JSON.parse(response.body).first
-      # binding.pry
+
       expect(response).to have_http_status(:success)
 
       expect(items).to eq({
