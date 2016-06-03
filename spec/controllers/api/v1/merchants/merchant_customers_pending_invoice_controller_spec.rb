@@ -6,7 +6,6 @@ RSpec.describe Api::V1::Merchants::MerchantCustomersWithPendingInvoicesControlle
   JSON.parse(response.body)
   end
   it 'responds with collection of customers with pending invoices' do
-    # GET /api/v1/merchants/:id/customers_with_pending_invoices returns a collection of customers which have pending (unpaid) invoices
     merchant = FactoryGirl.create(:merchant)
     customer1 = FactoryGirl.create(:customer)
     customer2 = FactoryGirl.create(:customer)

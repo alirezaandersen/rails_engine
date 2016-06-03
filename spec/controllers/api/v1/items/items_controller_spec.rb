@@ -17,7 +17,6 @@ RSpec.describe Api::V1::Items::ItemsController do
     end
   end
 
-
   describe "GET #show", type: :controller do
     it "returns one specific item" do
       items = FactoryGirl.create(:item)

@@ -12,6 +12,7 @@ RSpec.describe Api::V1::Merchants::MerchantItemsController do
     items = JSON.parse(response.body).first
 
     expect(response).to have_http_status(:success)
+    
     expect(items).to eq({
       "id"          => items.values[0],
       "name"        => items.values[1],

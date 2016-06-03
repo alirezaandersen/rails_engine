@@ -11,6 +11,7 @@ RSpec.describe Api::V1::Items::ItemsInvoiceItemsController do
     item = JSON.parse(response.body).first
 
     expect(response).to have_http_status(:success)
+    
     expect(item).to eq({
       "id"         => item.values[0],
       "item_id"    => item.values[1],

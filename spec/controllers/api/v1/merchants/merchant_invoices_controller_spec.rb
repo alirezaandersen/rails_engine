@@ -10,7 +10,9 @@ RSpec.describe Api::V1::Merchants::MerchantInvoicesController do
     get :index, id:merchant.id, format: :json
 
     items = JSON.parse(response.body).first
+
     expect(response).to have_http_status(:success)
+
     expect(items).to eq({
       "id"          => items.values[0],
       "customer_id" => items.values[1],

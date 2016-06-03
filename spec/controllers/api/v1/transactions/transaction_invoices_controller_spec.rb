@@ -12,6 +12,7 @@ RSpec.describe Api::V1::Transactions::TransactionInvoicesController do
     items = JSON.parse(response.body)
 
     expect(response).to have_http_status(:success)
+
     expect(items).to eq({
       "id"          => items.values[0],
       "customer_id" => items.values[1],

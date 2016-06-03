@@ -10,6 +10,7 @@ describe "GET #most_revenue_date", type: :controller do
      invoice_item = FactoryGirl.create(:invoice_item, invoice_id: invoice.id)
 
      get :index, id: merchant.id, format: :json
+
      expect(response).to be_success
    end
  end

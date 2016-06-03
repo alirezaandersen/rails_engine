@@ -11,6 +11,7 @@ module Api
         def revenue_params
           params.permit(:id, :date)
         end
+        
       end
     end
   end

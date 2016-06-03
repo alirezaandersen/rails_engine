@@ -11,6 +11,7 @@ describe "GET #most_revenue", type: :controller do
      invoice_item = FactoryGirl.create(:invoice_item, invoice_id: invoice.id)
 
      get :index, quantity: 1, format: :json
+
      expect(response).to be_success
    end
  end

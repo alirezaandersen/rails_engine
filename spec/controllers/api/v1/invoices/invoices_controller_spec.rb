@@ -19,7 +19,6 @@ RSpec.describe Api::V1::Invoices::InvoicesController do
     end
   end
 
-
   describe "GET #show", type: :controller do
     it "returns one specific invoice item" do
       invoice = FactoryGirl.create(:invoice)

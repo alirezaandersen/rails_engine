@@ -9,7 +9,6 @@ RSpec.describe Api::V1::Invoices::InvoicesInvoiceItemsController do
 
     get :index, id:invoice.id, format: :json
 
-
     item = JSON.parse(response.body).first
     expect(response).to have_http_status(:success)
     expect(item).to eq({

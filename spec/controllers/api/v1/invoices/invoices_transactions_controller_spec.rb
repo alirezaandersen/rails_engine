@@ -12,6 +12,7 @@ RSpec.describe Api::V1::Invoices::InvoicesTransactionsController do
     item = JSON.parse(response.body).first
 
     expect(response).to have_http_status(:success)
+    
     expect(item).to eq({
       "id"                 => item.values[0],
       "credit_card_number" => item.values[1],
