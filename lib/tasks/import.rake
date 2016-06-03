@@ -56,7 +56,7 @@ namespace :import do
     CSV.foreach(invoice_items, headers: :true, header_converters: :symbol) do |row|
       InvoiceItem.create!(id: row[:id],
       item_id: row[:item_id],
-      invoice_id: row[:item_id],
+      invoice_id: row[:invoice_id],
       quantity: row[:quantity],
       unit_price: BigDecimal.new(row[:unit_price].insert(-3, ".")),
       created_at: row[:created_at],

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe Api::V1::Invoices::InvoicesInvoiceItemsController do
-  describe "GET customers", type: :controller do
+  describe "GET inovice_items", type: :controller do
     it "returns the associated customer related to invoice" do
     invoice = FactoryGirl.create(:invoice)
     invoice_item = FactoryGirl.create(:invoice_item, invoice_id: invoice.id)

@@ -4,7 +4,7 @@ module Api
       class MerchantFavoriteCustomerController < ApiController
 
         def index
-          respond_with Merchant.find(params[:merchant_id]).favorite_customer
+          respond_with Merchant.find(params[:id]).favorite_customer
         end
       end
     end

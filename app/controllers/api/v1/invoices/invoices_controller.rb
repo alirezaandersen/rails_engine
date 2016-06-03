@@ -17,6 +17,7 @@ module Api
         end
 
         def find_all
+          # binding.pry
           respond_with Invoice.where(invoice_params)
         end
 
@@ -27,7 +28,7 @@ module Api
         private
 
         def invoice_params
-          params.permit(:customer_id, :merchant_id, :status, :created_at, :updated_at)
+          params.permit(:id, :customer_id, :merchant_id, :status, :created_at, :updated_at)
         end
       end
     end

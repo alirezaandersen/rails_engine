@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe Api::V1::Transactions::TransactionInvoicesController do
-  describe "GET transaction invoices", type: :controller do
+  describe "GET transaction invoice", type: :controller do
     it "returns the associated invoice related to the transaction" do
     invoice = FactoryGirl.create(:invoice)
     transaction = FactoryGirl.create(:transaction, invoice_id: invoice.id)

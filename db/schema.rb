@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20160531215237) do
     t.datetime "updated_at", null: false
   end
 
-q    t.integer  "item_id"
+  create_table "invoice_items", force: :cascade do |t|
+    t.integer  "item_id"
     t.integer  "invoice_id"
     t.integer  "quantity"
     t.decimal  "unit_price"
