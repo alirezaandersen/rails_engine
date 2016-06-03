@@ -16,7 +16,6 @@ module Api
         end
 
         def find_all
-          # binding.pry
           respond_with Invoice.where(invoice_params)
         end
 
