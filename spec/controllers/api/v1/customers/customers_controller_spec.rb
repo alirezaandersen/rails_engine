@@ -64,4 +64,18 @@ RSpec.describe Api::V1::Customers::CustomersController do
     end
   end
 
+  describe "GET #favorite_merchant", type: :controller do
+     it "returns the merchant's favorite customer" do
+       merchant = FactoryGirl.create(:merchant, name: "Ed")
+       customer = FactoryGirl.create(:customer)
+       invoice = FactoryGirl.create(:invoice, merchant_id: merchant.id, customer_id: customer.id)
+       transaction = FactoryGirl.create(:transaction, invoice_id: invoice.id, result: 'success')
+       # invoice_item = FactoryGirl.create(:invoice_item, invoice_id: invoice.id)
+
+       get :index, id: customer.id, format: :json
+
+       expect(response).to be_success
+     end
+   end
+
 end

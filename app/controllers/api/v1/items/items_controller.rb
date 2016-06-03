@@ -3,8 +3,6 @@ module Api
     module Items
       class ItemsController < ApiController
 
-        respond_to :json
-
         def index
           respond_with Item.all
         end

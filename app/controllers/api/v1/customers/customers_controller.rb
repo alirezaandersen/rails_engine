@@ -3,8 +3,6 @@ module Api
     module Customers
     class CustomersController < ApiController
 
-      respond_to :json
-
       def index
         respond_with Customer.all
       end

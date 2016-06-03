@@ -2,7 +2,6 @@ module Api
   module V1
     module InvoiceItems
       class InvoiceItemsController < ApiController
-        respond_to :json
 
         def index
           respond_with InvoiceItem.all
