@@ -9,20 +9,21 @@ Rails.application.routes.draw do
           get '/find',          to: 'merchants#find'
           get '/find_all',      to: 'merchants#find_all'
           get '/random',        to: 'merchants#random'
+            #all merchants
+          get '/most_items',    to: 'merchants_most_items#index'
+          get '/most_revenue',  to: 'merchants_most_revenue#index'
+          get '/revenue',       to: 'merchants_revenue_date#index'
         end
 
+        #everything in member has to be called upon an id of merchants and some may follow with params of something
         member do
-          get '/items',         to: 'merchant_items#index'
-          get '/invoices',      to: 'merchant_invoices#index'
-          #all merchants
-          get '/most_revenue',  to: 'most_revenue#index'
-          get '/most_items',    to: 'most_items#index'
-          get '/revenue',       to: 'all_revenue#index'
-
+          get '/items',             to: 'merchant_items#index'
+          get '/invoices',          to: 'merchant_invoices#index'
           #single merchants
-          get '/revenue',       to: 'single_revenue#index'
-          get '/revenue',       to: 'date_revenue#index'
-          get '/favorite_customer', to: 'favorite_customer#index'
+          get '/revenue',           to: 'merchant_revenues#index'
+          get '/revenue',           to: 'merchant_revenues#index'
+          get '/favorite_customer', to: 'merchant_favorite_customer#index'
+          get '/customers_with_pending_invoices', to: 'merchant_customers_with_pending_invoices#index'
         end
       end
 
