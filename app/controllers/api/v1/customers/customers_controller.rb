@@ -28,6 +28,7 @@ module Api
       def customer_params
         params.permit(:id, :first_name, :last_name, :created_at, :updated_at)
       end
+      #params not needed for gets
     end
     end
   end
